@@ -1,0 +1,20 @@
+@import "../../../assets/styles/breakpoints.scss";
+
+.navigation {
+  margin-top: -2rem;
+}
+
+.content {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (max-width: $sm) {
+  .content {
+    padding: 0;
+  }
+
+  .navigation {
+    margin-top: -1rem;
+  }
+}

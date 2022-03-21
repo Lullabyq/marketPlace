@@ -1,0 +1,133 @@
+@import "../../assets/styles/colors.scss";
+
+$footerHeight: 20px;
+
+.symbols {
+  margin-left: auto;
+  margin-right: 16px !important;
+  user-select: none;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  height: $footerHeight;
+  position: absolute;
+  left: 16px;
+  bottom: 0;
+  user-select: none;
+}
+
+.legend {
+  display: block;
+  color: $muiText;
+  font-size: 1.3rem;
+  font-weight: 400;
+  pointer-events: none;
+  user-select: none;
+  margin-left: 8px;
+  padding: 5px;
+}
+
+.wrapper {
+  min-height: fit-content;
+}
+
+.modifiers {
+  padding: 10px 10px 0;
+}
+
+.editor {
+  overflow: auto;
+  min-height: 150px;
+  max-height: 420px;
+  padding: 10px;
+  height: auto;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: $footerHeight;
+  background-color: $greyMain;
+  color: $greyText;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  height: auto;
+  border: 1px solid $greyDark;
+  border-radius: 5px;
+  padding: 0;
+  overflow: hidden;
+  min-width: 0;
+
+  &:hover {
+    border-color: $grey700;
+  }
+
+  &.focused,
+  &:active,
+  &.error {
+    border-width: 2px;
+    border-color: $greyDark;
+
+    & .symbols {
+      margin-right: 15px !important;
+    }
+
+    & .message {
+      left: 15px;
+    }
+
+    & .legend {
+      margin-left: 7px;
+    }
+
+    & .editor {
+      padding: 10px 9px;
+    }
+
+    & .modifiers {
+      padding: 10px 9px 0;
+    }
+
+    & .footer {
+      height: 19px;
+    }
+  }
+
+  &.focused {
+    border-color: $primaryMain;
+
+    & .legend {
+      color: $primaryMain;
+    }
+  }
+
+  &.error {
+    border-color: $error;
+
+    & .legend {
+      color: $error;
+    }
+  }
+}
+
+.icon {
+  font-size: 1.1rem !important;
+  color: $primaryMain;
+  margin-right: 6px;
+}
+
+.code {
+  color: $indigo500;
+}
+
+.warning {
+  color: $error;
+}
